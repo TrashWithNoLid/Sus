@@ -42,7 +42,7 @@ namespace SusClient
                 }
                 else if(latestCommand[0] == 0b00000011)
                 {
-                    Console.WriteLine("'disconnect command has been issued!");
+                    Console.WriteLine("'disconnect' command has been issued!");
                     DisconnectCommand();
                     break;
                 }
@@ -50,6 +50,7 @@ namespace SusClient
                 latestCommand = user.Receive(1); //Gets the latest command
                 Console.WriteLine("'{0}' has been received!", latestCommand[0]);
             }
+            Console.WriteLine("Command loop has exited!");
             if(latestCommand[0] == 0b00000011)
             {
                 ConnectToServer();
