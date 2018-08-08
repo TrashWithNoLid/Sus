@@ -47,6 +47,10 @@ namespace SusServer
                     latestCommand = "quit";
                     user.Send(0b00000011);
                 }
+                else if(latestCommand == "annoy")
+                {
+                    user.Send(0b00000100);
+                }
                 else
                 {
                     Console.WriteLine("Unknown command!");

