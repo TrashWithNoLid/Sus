@@ -1,0 +1,14 @@
+/Users/ryanbemis/Projects/Sus/SusClient/bin/Debug/netcoreapp2.1/SusClient.deps.json
+/Users/ryanbemis/Projects/Sus/SusClient/bin/Debug/netcoreapp2.1/SusClient.runtimeconfig.json
+/Users/ryanbemis/Projects/Sus/SusClient/bin/Debug/netcoreapp2.1/SusClient.runtimeconfig.dev.json
+/Users/ryanbemis/Projects/Sus/SusClient/bin/Debug/netcoreapp2.1/SusClient.dll
+/Users/ryanbemis/Projects/Sus/SusClient/bin/Debug/netcoreapp2.1/SusClient.pdb
+/Users/ryanbemis/Projects/Sus/SusClient/bin/Debug/netcoreapp2.1/CoreSus.dll
+/Users/ryanbemis/Projects/Sus/SusClient/bin/Debug/netcoreapp2.1/CoreSus.pdb
+/Users/ryanbemis/Projects/Sus/SusClient/obj/Debug/netcoreapp2.1/SusClient.csprojAssemblyReference.cache
+/Users/ryanbemis/Projects/Sus/SusClient/obj/Debug/netcoreapp2.1/SusClient.csproj.CoreCompileInputs.cache
+/Users/ryanbemis/Projects/Sus/SusClient/obj/Debug/netcoreapp2.1/SusClient.AssemblyInfoInputs.cache
+/Users/ryanbemis/Projects/Sus/SusClient/obj/Debug/netcoreapp2.1/SusClient.AssemblyInfo.cs
+/Users/ryanbemis/Projects/Sus/SusClient/obj/Debug/netcoreapp2.1/SusClient.csproj.CopyComplete
+/Users/ryanbemis/Projects/Sus/SusClient/obj/Debug/netcoreapp2.1/SusClient.dll
+/Users/ryanbemis/Projects/Sus/SusClient/obj/Debug/netcoreapp2.1/SusClient.pdb

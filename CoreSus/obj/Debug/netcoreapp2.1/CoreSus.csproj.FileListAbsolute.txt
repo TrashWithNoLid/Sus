@@ -1,0 +1,9 @@
+/Users/ryanbemis/Projects/Sus/CoreSus/bin/Debug/netcoreapp2.1/CoreSus.deps.json
+/Users/ryanbemis/Projects/Sus/CoreSus/bin/Debug/netcoreapp2.1/CoreSus.dll
+/Users/ryanbemis/Projects/Sus/CoreSus/bin/Debug/netcoreapp2.1/CoreSus.pdb
+/Users/ryanbemis/Projects/Sus/CoreSus/obj/Debug/netcoreapp2.1/CoreSus.csproj.CoreCompileInputs.cache
+/Users/ryanbemis/Projects/Sus/CoreSus/obj/Debug/netcoreapp2.1/CoreSus.AssemblyInfoInputs.cache
+/Users/ryanbemis/Projects/Sus/CoreSus/obj/Debug/netcoreapp2.1/CoreSus.AssemblyInfo.cs
+/Users/ryanbemis/Projects/Sus/CoreSus/obj/Debug/netcoreapp2.1/CoreSus.dll
+/Users/ryanbemis/Projects/Sus/CoreSus/obj/Debug/netcoreapp2.1/CoreSus.pdb
+/Users/ryanbemis/Projects/Sus/CoreSus/obj/Debug/netcoreapp2.1/CoreSus.csprojAssemblyReference.cache
