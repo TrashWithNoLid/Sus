@@ -1,0 +1,17 @@
+/Users/ryanbemis/Projects/Sus/SusServer/bin/Release/netcoreapp2.1/win10-x64/hostpolicy.dll
+/Users/ryanbemis/Projects/Sus/SusServer/bin/Release/netcoreapp2.1/win10-x64/hostfxr.dll
+/Users/ryanbemis/Projects/Sus/SusServer/bin/Release/netcoreapp2.1/win10-x64/SusServer.exe
+/Users/ryanbemis/Projects/Sus/SusServer/bin/Release/netcoreapp2.1/win10-x64/SusServer.deps.json
+/Users/ryanbemis/Projects/Sus/SusServer/bin/Release/netcoreapp2.1/win10-x64/SusServer.runtimeconfig.json
+/Users/ryanbemis/Projects/Sus/SusServer/bin/Release/netcoreapp2.1/win10-x64/SusServer.runtimeconfig.dev.json
+/Users/ryanbemis/Projects/Sus/SusServer/bin/Release/netcoreapp2.1/win10-x64/SusServer.dll
+/Users/ryanbemis/Projects/Sus/SusServer/bin/Release/netcoreapp2.1/win10-x64/SusServer.pdb
+/Users/ryanbemis/Projects/Sus/SusServer/bin/Release/netcoreapp2.1/win10-x64/CoreSus.dll
+/Users/ryanbemis/Projects/Sus/SusServer/bin/Release/netcoreapp2.1/win10-x64/CoreSus.pdb
+/Users/ryanbemis/Projects/Sus/SusServer/obj/Release/netcoreapp2.1/win10-x64/SusServer.csprojAssemblyReference.cache
+/Users/ryanbemis/Projects/Sus/SusServer/obj/Release/netcoreapp2.1/win10-x64/SusServer.csproj.CoreCompileInputs.cache
+/Users/ryanbemis/Projects/Sus/SusServer/obj/Release/netcoreapp2.1/win10-x64/SusServer.AssemblyInfoInputs.cache
+/Users/ryanbemis/Projects/Sus/SusServer/obj/Release/netcoreapp2.1/win10-x64/SusServer.AssemblyInfo.cs
+/Users/ryanbemis/Projects/Sus/SusServer/obj/Release/netcoreapp2.1/win10-x64/SusServer.csproj.CopyComplete
+/Users/ryanbemis/Projects/Sus/SusServer/obj/Release/netcoreapp2.1/win10-x64/SusServer.dll
+/Users/ryanbemis/Projects/Sus/SusServer/obj/Release/netcoreapp2.1/win10-x64/SusServer.pdb
