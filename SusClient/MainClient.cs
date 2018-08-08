@@ -12,7 +12,7 @@ namespace SusClient
 
             Console.Write("Creating client socket...");
             user.CreateSocket( //Creates the socket
-                  user.GetLocalAddress("192.168.43.145"), //Gets the servers address
+                  user.GetLocalAddress("192.168.1.2"), //Gets the servers address
                   11345 //Is the port of the conbnection
             );
             Console.Write("Done!\n");
@@ -50,7 +50,10 @@ namespace SusClient
                 latestCommand = user.Receive(1); //Gets the latest command
                 Console.WriteLine("'{0}' has been received!", latestCommand[0]);
             }
-            Console.WriteLine("'quit' command has been issued!");
+            if(latestCommand[0] == 0b00000011)
+            {
+                ConnectToServer();
+            }
         }
 
         private void ShutdownCommand()
