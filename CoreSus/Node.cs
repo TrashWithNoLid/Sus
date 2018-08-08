@@ -19,6 +19,10 @@ namespace CoreSus
                 }
                 ~Node()
                 {
+                    Cleanup();
+                }
+                public void Cleanup()
+                {
                     try
                     {
                         socket.Shutdown(SocketShutdown.Both); //Cleans up after the socket
@@ -126,26 +130,6 @@ namespace CoreSus
                         Console.WriteLine("Error: The Socket has not been created!");
                     }
                     return null;
-                }
-
-                public void Disconnect()
-                {
-                    try
-                    {
-                        socket.Disconnect(true);
-                    }
-                    catch (PlatformNotSupportedException pse)
-                    {
-                        Console.WriteLine("Platform Not Supported Exception: {0}", pse.StackTrace);
-                    }
-                    catch (ObjectDisposedException ode)
-                    {
-                        Console.WriteLine("Object Disposed Exception: {0}", ode.StackTrace);
-                    }
-                    catch (SocketException se)
-                    {
-                        Console.WriteLine("Socket Exception: {0}", se.StackTrace);
-                    }
                 }
 
                 protected IPEndPoint endPoint; //Stores the address and port of the other node

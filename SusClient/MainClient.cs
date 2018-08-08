@@ -8,15 +8,9 @@ namespace SusClient
     {
         public MainClient()
         {
-            user = new Client();
-
-            Console.Write("Creating client socket...");
-            user.CreateSocket( //Creates the socket
-                  user.GetLocalAddress("192.168.1.2"), //Gets the servers address
-                  11345 //Is the port of the conbnection
-            );
-            Console.Write("Done!\n");
+            Begin();
         }
+
         public void ConnectToServer()
         {
             Console.Write("Finding server...");
@@ -57,6 +51,18 @@ namespace SusClient
             }
         }
 
+        private void Begin()
+        {
+            user = new Client();
+
+            Console.Write("Creating client socket...");
+            user.CreateSocket( //Creates the socket
+                  user.GetLocalAddress("192.168.1.2"), //Gets the servers address
+                  11345 //Is the port of the conbnection
+            );
+            Console.Write("Done!\n");
+        }
+
         private void ShutdownCommand()
         {
             Process.Start("shutdown", "/p /f"); //Creates a new cmd that executes the shutdown command
@@ -64,7 +70,7 @@ namespace SusClient
 
         private void DisconnectCommand()
         {
-            user.Disconnect();
+            Begin(); //Recreate the user for future use
         }
 
         private Client user; //The main client
