@@ -37,7 +37,6 @@ namespace SusClient
                 else if(latestCommand[0] == 0b00000011)
                 {
                     Console.WriteLine("'disconnect' command has been issued!");
-                    DisconnectCommand();
                     break;
                 }
 
@@ -47,7 +46,7 @@ namespace SusClient
             Console.WriteLine("Command loop has exited!");
             if(latestCommand[0] == 0b00000011)
             {
-                ConnectToServer();
+                DisconnectCommand();
             }
         }
 
@@ -70,7 +69,16 @@ namespace SusClient
 
         private void DisconnectCommand()
         {
+            while(user.Send(0b11111111)) //Waits until the server has gone offline
+            {
+                System.Threading.Thread.Sleep(1000);
+            }
+
+            user.Cleanup(); //Cleans up the socket
+
             Begin(); //Recreate the user for future use
+            ConnectToServer(); //Tries to find a new server
+            BeginCommandProcessing(); //Begins a new command chain
         }
 
         private Client user; //The main client

@@ -68,7 +68,7 @@ namespace CoreSus
                     socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp); //Creates the socket
                 }
 
-                public void Send(byte data)
+                public bool Send(byte data)
                 {
                     if (socket != null) //Ensures the socket has been created
                     {
@@ -77,6 +77,7 @@ namespace CoreSus
                             var array = new byte[1]; //Stores the one byte of data in an array
                             array[0] = data;
                             socket.Send(array); //Transmits the one byte of data
+                            return true;
                         }
                         catch (ArgumentNullException ane)
                         {
@@ -95,6 +96,7 @@ namespace CoreSus
                     {
                         Console.WriteLine("Error: The Socket has not been created!");
                     }
+                    return false;
                 }
 
                 public byte[] Receive(int bufferSize)
