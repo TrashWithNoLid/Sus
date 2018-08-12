@@ -80,18 +80,7 @@ namespace SusServer
                 Console.WriteLine("Command: {0}, Argument Size: {1}", command, arguments.Count);
 
                 //Begin parsing commands
-                if(command == "quit")
-                {
-                    if(arguments.Count == 0)
-                    {
-                        user.Send(0b00000001);
-                    }
-                    else
-                    {
-                        Console.WriteLine("Received '{0}' arguments, Expected: '{1}'!", arguments.Count, '0');
-                    }
-                }
-                else if(command == "shutdown")
+                if(command == "shutdown")
                 {
                     if(arguments.Count == 0)
                     {
@@ -99,13 +88,32 @@ namespace SusServer
                     }
                     else
                     {
-                        Console.WriteLine("Received '{0}' arguments, Expected: '{1}'!", arguments.Count, '1');
+                        Console.WriteLine("Received '{0}' arguments, Expected: '{1}'!", arguments.Count, '0');
                     }
                 }
-                else if(command == "disconnect")
+                else if(command == "quit")
                 {
-                    user.Send(0b00000011);
-                    break;
+                    if(arguments.Count == 0)
+                    {
+                        user.Send(0b00000001);
+                    }
+                    else if (arguments.Count == 1)
+                    {
+                        if (arguments[0] == "all")
+                        {
+                            user.Send(0b00000001);
+                            break;
+                        }
+                        else if (arguments[0] == "this")
+                        {
+                            user.Send(0b00000011);
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Unknown parameter: \"{0}\"", arguments[0]);
+                        }
+                    }
                 }
                 else
                 {
