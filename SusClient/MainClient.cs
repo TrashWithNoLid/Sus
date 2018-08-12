@@ -47,7 +47,7 @@ namespace SusClient
             byte[] latestCommand = new byte[1];
             latestCommand[0] = 0b00000000;
 
-            while(latestCommand[0] != 0b00000001) //Quits taking commands once 'quit' command has been executed
+            while(latestCommand[0] != 0b00000001) //Quits taking commands once 'quit' command has been issued
             {
                 if(latestCommand[0] == 0b00000010) //Executes the 'shutdown' command
                 {
@@ -58,11 +58,6 @@ namespace SusClient
                 {
                     Console.WriteLine("'disconnect' command has been issued!");
                     break;
-                }
-                else if(latestCommand[0] == 0b00000100)
-                {
-                    Console.WriteLine("'annoy' command has been issued!");
-                    AnnoyCommand();
                 }
 
                 latestCommand = user.Receive(1); //Gets the latest command

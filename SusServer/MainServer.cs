@@ -1,5 +1,7 @@
 ﻿using System;
 using CoreSus.Nodes;
+using System.Collections.Generic;
+
 namespace SusServer
 {
     public class MainServer
@@ -27,29 +29,83 @@ namespace SusServer
         }
         public void BeginInput()
         {
-            string latestCommand = ""; //Stores the newest command
+            string latestCommand = String.Empty; //Stores the newest command
+
             while (latestCommand != "quit") //Runs until the user quits
             {
                 Console.Write(">");
                 latestCommand = Console.ReadLine(); //Gets the user input for commands
 
+
+                string command = String.Empty; //Stores the first segment of the command
+                string dataBuffer = String.Empty;
+
+                var arguments = new List<string> { }; //Stores the arguments of the command
+                bool isArg = false; //Determines if the data is a command or an argument
+
+                foreach (char c in latestCommand)
+                {
+                    if (c == ' ')
+                    {
+                        if (!isArg) //Checks if the data is an argument or command
+                        {
+                            command = dataBuffer; //Sets the command to the current data
+                            isArg = true; //Lets the loop know that the command has been found
+
+                        }
+                        else
+                        {
+                            arguments.Add(dataBuffer); //Adds the current data to the arguments
+                        }
+                        dataBuffer = String.Empty; //Resets the current data
+                    }
+                    else
+                    {
+                        dataBuffer += c; //Adds the current character to the data buffer
+                    }
+                }
+
+                if(dataBuffer != String.Empty) //Checks if any data was left over
+                {
+                    if(command == String.Empty) //Checks if the left over data was a command or argument
+                    {
+                        command = dataBuffer; //Sets the command to the data
+                    }
+                    else
+                    {
+                        arguments.Add(dataBuffer);  //Adds the data into the arguments
+                    }
+                }
+
+                Console.WriteLine("Command: {0}, Argument Size: {1}", command, arguments.Count);
+
                 //Begin parsing commands
-                if(latestCommand == "quit")
+                if(command == "quit")
                 {
-                    user.Send(0b00000001);
+                    if(arguments.Count == 0)
+                    {
+                        user.Send(0b00000001);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Received '{0}' arguments, Expected: '{1}'!", arguments.Count, '0');
+                    }
                 }
-                else if(latestCommand == "shutdown")
+                else if(command == "shutdown")
                 {
-                    user.Send(0b00000010);
+                    if(arguments.Count == 0)
+                    {
+                        user.Send(0b00000010);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Received '{0}' arguments, Expected: '{1}'!", arguments.Count, '1');
+                    }
                 }
-                else if(latestCommand == "disconnect")
+                else if(command == "disconnect")
                 {
-                    latestCommand = "quit";
                     user.Send(0b00000011);
-                }
-                else if(latestCommand == "annoy")
-                {
-                    user.Send(0b00000100);
+                    break;
                 }
                 else
                 {

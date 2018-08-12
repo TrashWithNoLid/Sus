@@ -1,9 +1,9 @@
 ﻿<Properties StartupConfiguration="{2499DD48-8154-41F1-9F26-674D7E3563A9}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="SusClient/MainClient.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SusServer/MainServer.cs">
     <Files>
-      <File FileName="SusClient/MainClient.cs" Line="28" Column="42" />
-      <File FileName="SusClient/Program.cs" Line="9" Column="49" />
-      <File FileName="CoreSus/IPManager.cs" Line="25" Column="22" />
+      <File FileName="SusClient/MainClient.cs" Line="50" Column="110" />
+      <File FileName="CoreSus/IPManager.cs" Line="17" Column="22" />
+      <File FileName="SusServer/MainServer.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

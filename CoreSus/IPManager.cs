@@ -20,7 +20,7 @@ namespace CoreSus
 
                     if(!File.Exists(fileLocation)) //Checks if the file exists
                     {
-                        WriteIP("127.0.0.1");
+                        WriteIP(""); //Writes an empty string to represent a local address
                     }
                 }
                 catch (UnauthorizedAccessException uae)
