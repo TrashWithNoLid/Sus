@@ -9,4 +9,10 @@
   <ItemGroup>
     <ProjectReference Include="..\CoreSus\CoreSus.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="files\ip.sus" />
+    <None Remove="files\ip.txt" />
+    <None Remove="ip.txt" />
+    <None Remove="files\ip\ip.txt" />
+  </ItemGroup>
 </Project>

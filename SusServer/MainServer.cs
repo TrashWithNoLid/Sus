@@ -10,7 +10,7 @@ namespace SusServer
 
             Console.Write("Creating server socket...");
             server.CreateSocket( //Creates the socket for the server
-                server.GetLocalAddress(""), //Gets the address of the server
+                server.ConvertToAddress(""), //Gets the address of the server
                 11345 //The port the server is listening on
             );
             Console.Write("Done!\n");

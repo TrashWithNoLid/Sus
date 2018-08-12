@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using CoreSus.IP;
 using CoreSus.Nodes;
 
 namespace SusClient
@@ -9,6 +10,25 @@ namespace SusClient
         public MainClient()
         {
             Begin();
+        }
+
+        private void Begin() //Handles the startup routine
+        {
+            user = new Client();
+
+            Console.Write("Creating client socket...");
+
+            var manager = new IPManager("files/ip", "ip.txt");
+            user.CreateSocket //Creates the socket
+                (
+                    user.ConvertToAddress //Converts the string ip to an IPAddress
+                        (
+                            manager.GetIP() //Gets the ip from the ip file
+                        ),
+                    11345 //The port number
+                );
+            
+            Console.Write("Done!\n");
         }
 
         public void ConnectToServer()
@@ -53,18 +73,6 @@ namespace SusClient
             {
                 DisconnectCommand();
             }
-        }
-
-        private void Begin() //Handles the startup routine
-        {
-            user = new Client();
-
-            Console.Write("Creating client socket...");
-            user.CreateSocket( //Creates the socket
-                  user.GetLocalAddress("192.168.1.2"), //Gets the servers address
-                  11345 //Is the port of the conbnection
-            );
-            Console.Write("Done!\n");
         }
 
         private void ShutdownCommand() //Handles the shutdown command

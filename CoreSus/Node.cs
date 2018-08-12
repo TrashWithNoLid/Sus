@@ -37,7 +37,7 @@ namespace CoreSus
                         Console.WriteLine("Object Disposed Exception: {0}", ode.StackTrace);
                     }
                 }
-                public IPAddress GetLocalAddress(string addr)
+                public IPAddress ConvertToAddress(string addr)
                 {
                     try
                     {

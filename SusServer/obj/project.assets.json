@@ -2109,13 +2109,13 @@
       "projectName": "SusServer",
       "projectPath": "/Users/ryanbemis/Projects/Sus/SusServer/SusServer.csproj",
       "packagesPath": "/Users/ryanbemis/.nuget/packages/",
-      "outputPath": "/Users/ryanbemis/Projects/Sus/SusServer/obj/",
+      "outputPath": "/Users/ryanbemis/Projects/Sus/SusServer/obj",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/ryanbemis/.nuget/NuGet/NuGet.Config"
+        "/Users/ryanbemis/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
@@ -2142,8 +2142,9 @@
       "netcoreapp2.1": {
         "dependencies": {
           "Microsoft.NETCore.App": {
+            "suppressParent": "All",
             "target": "Package",
-            "version": "[2.1.0, )",
+            "version": "2.1.0",
             "autoReferenced": true
           }
         },
